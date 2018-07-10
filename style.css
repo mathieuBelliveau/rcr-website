@@ -1,0 +1,51 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+div.main_content {
+    width: 800px;
+    margin: 0 auto;
+    background: blue;
+}
+div.main_header {
+    position: sticky;
+    width: 100%;
+    height: 90px;
+    background: green;
+    font-size: 30px;
+    display: table;
+}
+div.main_header > span.title {
+    display: table-cell;
+    vertical-align: middle;
+}
+div.main_header > div.logo {
+    float: left;
+    height: 80px;
+    width: 80px;
+    background: red;
+    margin: 5px;
+}
+
+div.main_body {
+    width: 800px;
+}
+
+div.main_footer {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    width: 100%;
+    background: magenta;
+}
+
+div.home_switcher {
+    display: grid;
+    grid-template-columns: auto auto;
+    padding: 10px;
+}
+div.home_switcher > div {
+    background: blue;
+    padding: 10px;
+    margin: 0 auto;
+}
