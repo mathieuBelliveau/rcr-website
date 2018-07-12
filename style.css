@@ -1,6 +1,31 @@
 body {
     margin: 0;
     padding: 0;
+    font-family: "Lucida Bright Demibold", "Georgia", serif;
+}
+
+p {
+    margin: 0;
+}
+
+a, a:visited {
+    color: #0C0;
+    text-decoration: none;
+}
+a:hover {
+    color: #0F0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    font-weight: inherit;
+}
+h1 {
+    font-family: "Avenir Next Heavy", "Avenir Next", sans-serif;
+    font-size: 50px;
+}
+h2 {
+    font-family: "Superclarendon-Regular", sans-serif;
 }
 
 div.main_content {
@@ -16,9 +41,11 @@ div.main_header {
     font-size: 30px;
     display: table;
 }
-div.main_header > span.title {
+div.main_header > h1.title {
     display: table-cell;
     vertical-align: middle;
+    text-transform: uppercase;
+    font-size: 42px;
 }
 div.main_header > div.logo {
     float: left;
@@ -30,6 +57,12 @@ div.main_header > div.logo {
 
 div.main_body {
     width: 800px;
+}
+div.main_body > div {
+    margin: 15px 0;
+}
+div.main_body > div:first-child {
+    margin-top: 0;
 }
 
 div.main_footer {
@@ -48,4 +81,27 @@ div.home_switcher > div {
     background: blue;
     padding: 10px;
     margin: 0 auto;
+}
+
+div.news {
+    padding: 0 10%;
+}
+div.col2 {
+    display: flex;
+}
+div.col2 > div {
+    flex: 50%;
+}
+div.col1 {
+    display: flex;
+    flex-direction: column;
+}
+
+div.news > div > div {
+    padding: 0 2.5%;
+}
+div.news > div.headlines > div {
+    text-align: center;
+    padding-left: 50px;
+    background: linear-gradient(to right, blue, #06F, blue);
 }
