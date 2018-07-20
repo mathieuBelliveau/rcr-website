@@ -41,11 +41,16 @@ div.main_header {
     font-size: 30px;
     display: table;
 }
-div.main_header > h1.title {
+div.main_header div.title {
+    letter-spacing: -3px;
     display: table-cell;
     vertical-align: middle;
+    text-align: left;
+}
+div.main_header div.title h1 {
     text-transform: uppercase;
     font-size: 42px;
+    text-align: left;
 }
 div.main_header > div.logo {
     float: left;
@@ -87,7 +92,8 @@ div.news {
     padding: 0 10%;
 }
 div.col2 {
-    display: flex;
+    display: grid;
+    grid-template-columns: 50% 50%;
 }
 div.col2 > div {
     flex: 50%;
@@ -104,4 +110,32 @@ div.news > div.headlines > div {
     text-align: center;
     padding-left: 50px;
     background: linear-gradient(to right, blue, #06F, blue);
+}
+
+div.title span.collapse {
+    transition: color .4s linear .1s, letter-spacing .5s;
+}
+div.title:hover span.collapse {
+    color: transparent;
+    letter-spacing: -42px;
+    transition: color .3s, letter-spacing .5s;
+}
+
+.diamond {
+    width: 0;
+    height: 0;
+    border: 75px solid transparent;
+    border-bottom-color: red;
+    position: relative;
+    top: -75px;
+}
+.diamond:after {
+    content: '';
+    position: absolute;
+    left: -75px;
+    top: 75px;
+    width: 0;
+    height: 0;
+    border: 75px solid transparent;
+    border-top-color: red;
 }
