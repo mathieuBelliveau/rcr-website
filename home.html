@@ -3,6 +3,9 @@
     <head>
         <title>Test Page</title>
         <link rel="stylesheet" type="text/css" href="style.css" />
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!--        <script src="themes.js"></script>-->
     </head>
 
     <body>
@@ -14,7 +17,7 @@
             <div class="main_body">
                 <div class="home_switcher">
                     <div style="text-align: center;">
-                        <div style="width: 200px; height: 120px; background: red; border: 1px black solid"></div>
+                        <div style="width: 200px; height: 120px; background: red; border: 1px black solid; "></div>
                         adventure
                     </div>
                     <div style="text-align: center;">
@@ -64,7 +67,15 @@
                 <div style="text-align: left; background: yellow;">Left aligned</div>
                 <div style="text-align: right; background: orange;">and right aligned, respectively</div>
             </div>
+            <div style="width: 100%; height: 100px;display:  grid; grid-template-columns: 25% 25% 25% 25%;">
+                <button id="winter" class="button">
+                Winter</button>
+                <div id="spring" class="button" >Spring</div>
+                <div id="summer" class="button">Summer</div>
+                <div id="autumn" class="button">Autumn</div>
+            </div>
         </div>
+        
     </body>
 
 </html>

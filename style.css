@@ -139,3 +139,35 @@ div.title:hover span.collapse {
     border: 75px solid transparent;
     border-top-color: red;
 }
+
+.button {
+    display: block; 
+    width: 100%; 
+    background: pink; 
+    margin: 0 auto; 
+    text-align: center; 
+    border: 1px solid black; 
+    border-radius: 50px; 
+    color: red; 
+}
+
+.button:hover {
+    color: blue;
+    font-size: 28;
+}
+
+#winter {
+    
+}
+
+#spring {
+    
+}
+
+#summer {
+    
+}
+
+#autumn {
+    
+}
