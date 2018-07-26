@@ -53,7 +53,6 @@ div.main_header > div.logo {
     float: left;
     height: 80px;
     width: 80px;
-    background: red;
     margin: 5px;
 }
 
@@ -71,7 +70,6 @@ div.main_footer {
     display: grid;
     grid-template-columns: 50% 50%;
     width: 100%;
-    background: magenta;
 }
 
 div.home_switcher {
@@ -82,6 +80,7 @@ div.home_switcher {
 div.home_switcher > div {
     padding: 10px;
     margin: 0 auto;
+    text-align: center;
 }
 
 div.news {
@@ -149,6 +148,25 @@ div.title:hover span.collapse {
 .button:hover {
     color: blue;
     font-size: 28;
+}
+
+.tribar_container {
+    background: cyan;
+    width: 70px; 
+    height: 70px; 
+    float: right;
+    margin:0 10px 10px 0;
+}
+
+.tribar {
+    margin: 23px auto;/*temporary. must be a better way*/
+}
+
+.tribar > div {
+    width: 35;
+    height: 5px;
+    background: black;
+    margin: 5px 0;
 }
 
 body {

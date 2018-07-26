@@ -15,6 +15,10 @@
                 $('button[data-theme]').click(function() {
                     $('head link#theme').attr('href', $(this).data("theme"));
                 })
+            });
+            
+            $(documen).ready(function() {
+                
             })
         </script>
     </head>
@@ -22,26 +26,35 @@
     <body>
         <div class="main_content">
             <div class="main_header">
-                <div class="logo"></div>
+                <div class="logo">
+                    <img style="height: 100%; weight: 100%;" src="raw/RCRLogo-03.png">
+                </div>
                 <div class="title">
                     R<span class="collapse">oyal&nbsp;</span>C<span class="collapse">anadian&nbsp;</span>R<span class="collapse">ecreation</span>
                 </div>
+                <center class="tribar_container">
+                    <div class="tribar">
+                        <div style="margin-top: "></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </center>
             </div>
             <div class="main_body">
                 <div class="home_switcher">
-                    <div style="text-align: center;">
+                    <div>
                         <div style="width: 200px; height: 120px; background: red; border: 1px black solid; "></div>
                         adventure
                     </div>
-                    <div style="text-align: center;">
+                    <div>
                         <div style="width: 200px; height: 120px; background: cyan; border: 1px black solid"></div>
                         events
                     </div>
-                    <div style="text-align: center;">
+                    <div>
                         <div style="width: 200px; height: 120px; background: orange; border: 1px black solid"></div>
                         history
                     </div>
-                    <div style="text-align: center;">
+                    <div>
                         <div style="width: 200px; height: 120px; background: #0F0; border: 1px black solid"></div>
                         camping
                     </div>
