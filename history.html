@@ -2,7 +2,6 @@
 <html>
     <head>
         <title>Our story</title>
-        <link rel="stylesheet" type="text/css" href="style.css" />
         <link href="css/style.css" rel="stylesheet" />
         <link href="css/spring.css" rel="stylesheet" id="theme" />
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -13,8 +12,7 @@
         
         <script>
             $(document).ready(function() {
-
-            $('button[data-theme]').click(function() {
+                $('button[data-theme]').click(function() {
                     $('head link#theme').attr('href', $(this).data("theme"));
                 })
             })
@@ -24,8 +22,8 @@
         <div class="main_content">
             <div class="main_header">
                 <div class="logo"></div>
-                <div class="title" style="width: 100%;">
-                    <h1 class="title">R<span class="collapse">oyal&nbsp;</span>C<span class="collapse">anadian&nbsp;</span>R<span class="collapse">ecreation</span></h1>
+                <div class="title">
+                    R<span class="collapse">oyal&nbsp;</span>C<span class="collapse">anadian&nbsp;</span>R<span class="collapse">ecreation</span>
                 </div>
             </div>
             <div style="width: 100%; height: 200px; background: orange;">
@@ -67,14 +65,10 @@
             </div>
     
             <div class="main_footer">
-                <div style="text-align: left; background: yellow;">
-                    Left aligned
-                </div>
-                <div style="text-align: right; background: orange;">
-                    and right aligned, respectively
-                </div>
+                <div style="text-align: left; background: yellow;">Left aligned</div>
+                <div style="text-align: right; background: orange;">and right aligned, respectively</div>
             </div>
-                <div style="width: 100%; height: 100px;display:  grid; grid-template-columns: 25% 25% 25% 25%;">
+            <div style="width: 100%; height: 100px;display:  grid; grid-template-columns: 25% 25% 25% 25%;">
                 <button id="winter" class="button" data-theme="css/winter.css">Winter</button>
                 <button id="spring" class="button" data-theme="css/spring.css">Spring</button>
                 <button id="summer" class="button" data-theme="css/summer.css">Summer</button>

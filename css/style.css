@@ -105,7 +105,6 @@ div.news > div > div {
 div.news > div.headlines > div {
     text-align: center;
     padding-left: 50px;
-    background: linear-gradient(to right, blue, #06F, blue);
 }
 
 div.title span.collapse {
