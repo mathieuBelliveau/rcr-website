@@ -10,3 +10,11 @@ div.main_header {
     background: #e86137;
     color: #fff2c4;
 }
+
+div.news > div.headlines > div {
+    background: linear-gradient(to right, #fde49f, #50261e, #fde49f);
+}
+
+div.news > div.headlines > div > a {
+    color: #fde49f;
+}
