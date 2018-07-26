@@ -158,11 +158,11 @@ div.title:hover span.collapse {
     margin:0 10px 10px 0;
 }
 
-.tribar {
+#tribar {
     margin: 23px auto;/*temporary. must be a better way*/
 }
 
-.tribar > div {
+#tribar > div {
     width: 35;
     height: 5px;
     background: black;
