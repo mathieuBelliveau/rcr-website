@@ -151,3 +151,13 @@ div.title:hover span.collapse {
     color: blue;
     font-size: 28;
 }
+
+body {
+    transition: color 0.3s, background 0.3s;
+}
+.main_body {
+    transition: color 0.3s, background 0.3s;
+}
+.main_header {
+    transition: color 0.3s, background 0.3s;
+}
