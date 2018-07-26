@@ -2,22 +2,21 @@
 
     <head>
         <title>Test Page</title>
-        <link rel="stylesheet" type="text/css" href="style.css" />
-        <link rel="stylesheet" type="text/css" href="spring.css" />
+        <link href="css/style.css" rel="stylesheet" />
+        <link href="css/spring.css" rel="stylesheet" id="theme" />
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Alegreya" rel="stylesheet">
         
-        
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
-        </script>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
         
         <script>
-            $('#spring').click(function (){$('link[href="spring.css"]').attr('href','spring.css');});
-            
-            $('#summer').click(function (){$('link[href="spring.css"]').attr('href','summer.css');});
-            
-            $('#autumn').click(function (){$('link[href="spring.css"]').attr('href','autumn.css');});
-            
-            $('#summer').click(function (){$('link[href="spring.css"]').attr('href','winter.css');});
-            
+            $(document).ready(function() {
+
+            $('button[data-theme]').click(function() {
+                    $('head link#theme').attr('href', $(this).data("theme"));
+                })
+            })
         </script>
     </head>
 
@@ -25,7 +24,9 @@
         <div class="main_content">
             <div class="main_header">
                 <div class="logo"></div>
-                <h1 class="title">Royal Canadian Recreation</h1>
+                <div class="title">
+                    R<span class="collapse">oyal&nbsp;</span>C<span class="collapse">anadian&nbsp;</span>R<span class="collapse">ecreation</span>
+                </div>
             </div>
             <div class="main_body">
                 <div class="home_switcher">
@@ -81,11 +82,10 @@
                 <div style="text-align: right; background: orange;">and right aligned, respectively</div>
             </div>
             <div style="width: 100%; height: 100px;display:  grid; grid-template-columns: 25% 25% 25% 25%;">
-                <button id="winter" class="button">
-                Winter</button>
-                <div id="spring" class="button" >Spring</div>
-                <div id="summer" class="button">Summer</div>
-                <div id="autumn" class="button">Autumn</div>
+                <button id="winter" data-theme="css/winter.css">Winter</button>
+                <button id="spring" data-theme="css/spring.css">Spring</button>
+                <button id="summer" data-theme="css/summer.css">Summer</button>
+                <button id="autumn" data-theme="css/autumn.css">Autumn</button>
             </div>
         </div>
         
