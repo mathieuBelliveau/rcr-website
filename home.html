@@ -2,15 +2,17 @@
 
     <head>
         <title>Test Page</title>
+        
         <link href="css/style.css" rel="stylesheet" />
         <link href="css/spring.css" rel="stylesheet" id="theme" />
+        
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Alegreya" rel="stylesheet">
         
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
         
-        <script>
+        <script type="text/javascript">
             $(document).ready(function() {
                 $('button[data-theme]').click(function() {
                     $('head link#theme').attr('href', $(this).data("theme"));
@@ -34,13 +36,9 @@
                 <div class="title">
                     R<span class="collapse">oyal&nbsp;</span>C<span class="collapse">anadian&nbsp;</span>R<span class="collapse">ecreation</span>
                 </div>
-                <center class="tribar_container">
-                    <div id="tribar">
-                        <div style="margin-top: "></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                </center>
+                <div class="tribar_container">
+                    <div id="tribar"></div>
+                </div>
             </div>
             <div class="main_body">
                 <div class="home_switcher">

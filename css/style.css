@@ -151,22 +151,30 @@ div.title:hover span.collapse {
 }
 
 .tribar_container {
+    display: table;
     background: cyan;
     width: 70px; 
     height: 70px; 
     float: right;
     margin:0 10px 10px 0;
 }
-
-#tribar {
-    margin: 23px auto;/*temporary. must be a better way*/
+div.tribar_container:hover {
+    border: 2px solid black;
+    margin: -2px 8px 8px -2px;
 }
 
-#tribar > div {
-    width: 35;
-    height: 5px;
-    background: black;
-    margin: 5px 0;
+/* consider using font awesome: https://fontawesome.com/icons/bars?style=solid */
+div.tribar_container > div:before {
+    content: '\2630';
+}
+div.tribar_container > div {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    color: black;
+    margin: 0 auto;
+    font-size: 45px;
+    cursor: default;
 }
 
 body {
@@ -177,4 +185,10 @@ body {
 }
 .main_header {
     transition: color 2s, background 2s;
+}
+div.news > div.headlines > div {
+    transition: background 2s;
+}
+div.news > div.headlines > div > a {
+    transition: color 2s;
 }
