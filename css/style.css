@@ -226,7 +226,8 @@ div.news > div.headlines > div > a {
 .news_browser .menu > a.active:before {
     color: black;
 }
-.news_browser .content {
+.news_browser .content h2 {
+    margin-bottom: 10px;
 }
 .news_browser .content > div {
     display: none;
