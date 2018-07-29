@@ -1,0 +1,290 @@
+/* background: https://www.pexels.com/search/nature%20wallpaper/ */
+/* adventure: https://pixabay.com/en/quad-cross-enduro-motocross-jump-1677678/ */
+/* events: https://pixabay.com/en/action-bike-biker-colorful-1851167/ */
+/* history: https://pixabay.com/en/totem-pole-aboriginal-nature-872357/ */
+/* camping: https://pixabay.com/en/camp-forest-summer-holidays-group-1163419/ */
+/* NEED REPLACING - map: https://www.stanleypark.org/park-maps.html */
+
+body {
+    margin: 0;
+    background-image: url(background.jpg);
+    background-position: center top;
+    background-size: cover;
+}
+
+.main_column {
+    width: 1000px;
+    margin: 0 auto;
+}
+.full_size {
+    width: 100%;
+    height: 100%;
+}
+
+.main_header {
+    /*background: rgba(255, 255, 255, 0.15);*/
+    width: 100%;
+    height: 120px;
+    margin: 20px 0;
+}
+.main_header > div {
+    display: table;
+    height: 100%;
+}
+
+.main_title {
+    display: table;
+    height: 100%;
+    text-shadow: 0px 0px 5px black, 0px 0px 20px black;
+    color: white;
+    font-size: 50px;
+    font-weight: 600;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    letter-spacing: -3px;
+}
+.main_title > div {
+    display: table-cell;
+    text-align: center;
+    vertical-align: bottom;
+}
+.main_menu {
+    margin: 0 auto;
+    display: table;
+    height: 100%;
+    width: 600px;
+}
+.main_menu > div {
+    display: table-cell;
+    text-align: center;
+    vertical-align: bottom;
+    border-radius: 25px;
+}
+.main_menu > div > a {
+    display: inline-block;
+    width: 100px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 20px;
+    padding: 0 5px;
+    font-family: sans-serif;
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.5);
+    transition: background-color 0.3s;
+}
+.main_menu > div > a.active {
+    background: white;
+}
+.main_menu > div > a:hover {
+    background: white;
+    border: 1px solid black;
+    margin: -1px;
+}
+.main_menu > div > a:active {
+    color: default;
+}
+
+.main_shadow {
+ /*   background:
+        linear-gradient(
+            rgba(255, 255, 255, 0.15),
+            rgba(0, 0, 0, 0));*/
+    height: 50px;
+    margin-bottom: -50px;
+}
+
+
+.main_content {
+    margin: 20px 0;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    /*background: rgba(119, 221, 119, 0.4);*/
+    padding: 10px 10px;
+    font-size: 20px;
+    font-family: serif;
+}
+.main_content > div {
+    background: white;
+    border-radius: 15px;
+    padding: 10px;
+    margin: 10px;
+}
+
+
+div.home_switcher {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    padding: 10px;
+}
+div.home_switcher > div {
+    padding: 10px;
+    margin: 10px;
+    margin: 0 auto;
+    text-align: center;
+    display: table;
+}
+div.home_switcher > div > a {
+    text-decoration: none;
+    display: block;
+    border-radius: 15px;
+    width: 200px;
+    height: 150px;
+    background-size: cover;
+    border: 1px solid black;
+    display: table-cell;
+    font-family: sans-serif;
+    vertical-align: bottom;
+    text-transform: uppercase;
+    color: white;
+    text-shadow:
+        0 0 5px black,
+        0 0 5px black,
+        0 0 10px black;
+    filter: grayscale(50%);
+    transition: all 0.3s;
+}
+div.home_switcher > div > a:hover {
+    filter: grayscale(0%);
+}
+
+.news_browser > div {
+    height: 300px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 300px auto;
+    border-radius: 15px;
+    box-sizing: border-box;
+}
+.news_browser .menu {
+    background: #EEE;
+    border-radius: 15px 0 0 15px;
+    box-sizing: border-box;
+    height: 100%;
+}
+.news_browser .menu > a {
+    display: block;
+    text-decoration: none;
+    font-family: sans-serif;
+    display: block;
+    padding: 5px 10px;
+    color: black;
+}
+.news_browser .menu > a:before {
+    color: transparent;
+    content: '\25b6\0020';
+    text-shadow: none;
+}
+.news_browser .menu > a:hover {
+    padding: 5px 10px;
+    text-shadow: 0 0 1px black;
+}
+.news_browser .menu > a.active:before {
+    color: black;
+}
+.news_browser .content {
+}
+.news_browser .content > div {
+    display: none;
+    padding: 10px;
+    overflow-y: auto;
+    height: 100%;
+}
+.news_browser .content > div.active {
+    box-sizing: border-box;
+    display: block;
+}
+.news_browser .content > div h1 {
+    margin-top: 0;
+}
+
+.news_preview {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: 56px 56px 56px 56px;
+}
+.news_preview2 {
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 218px 56px 56px 56px;
+}
+.news_preview > .long_item {
+    box-sizing: border-box;
+    grid-row: span 4;
+    grid-column: span 1;
+    height: 100%;
+    position: relative;
+    padding: 5px;
+}
+.news_preview2 > .long_item {
+    grid-row: span 1;
+    grid-column: span 1;
+    position: relative;
+    padding: 5px;
+}
+.news_preview > .long_item > a {
+    box-sizing: border-box;
+    color: black;
+    text-decoration: none;
+    height: 100%;
+    display: grid;
+    grid-template-rows: auto auto 20px;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 5px;
+    padding: 10px;
+}
+.news_preview > .short_item {
+    display: table;
+    height: 100%;
+    padding: 5px;
+}
+.news_preview2 > .short_item {
+    grid-column: 1/span 2;
+    text-align: center;
+}
+.news_preview > .short_item > a {
+    color: black;
+    text-decoration: none;
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 1.5em;
+    font-family: sans-serif;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 5px;
+    padding: 0 10px;
+}
+
+
+.item_selector {
+    margin: 0 auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 200px auto;
+    background: green;
+}
+.item_selector > .selector > div {
+    position: relative;
+    margin: 20px 0;
+    background: blue;
+    padding: 20px;
+    margin: 20px 0 20px 20px;
+    border-radius: 50px;
+    width: 150px;
+    font-size: 30px;
+    text-align: center;
+}
+.item_selector > .selector > div:first-child {
+    margin-top: 0;
+}
+.item_selector > .selector > div:last-child {
+    margin-bottom: 0;
+}
+.item_selector > .content {
+    margin-left: -200px;
+    padding-left: 250px;
+    width: 750px;
+    background:
+        linear-gradient(
+            to right,
+            green 0px,
+            red 250px);
+    background: transprent;
+}
