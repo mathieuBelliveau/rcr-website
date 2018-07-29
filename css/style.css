@@ -192,3 +192,54 @@ div.news > div.headlines > div {
 div.news > div.headlines > div > a {
     transition: color 2s;
 }
+
+
+.news_browser > div {
+    height: 300px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 300px auto;
+    border-radius: 15px;
+    box-sizing: border-box;
+}
+.news_browser .menu {
+    background: #EEE;
+    border-radius: 15px 0 0 15px;
+    box-sizing: border-box;
+    height: 100%;
+}
+.news_browser .menu > a {
+    display: block;
+    text-decoration: none;
+    font-family: sans-serif;
+    display: block;
+    padding: 5px 10px;
+    color: black;
+}
+.news_browser .menu > a:before {
+    color: transparent;
+    content: '\25b6\0020';
+    text-shadow: none;
+}
+.news_browser .menu > a:hover {
+    padding: 5px 10px;
+    text-shadow: 0 0 1px black;
+}
+.news_browser .menu > a.active:before {
+    color: black;
+}
+.news_browser .content {
+}
+.news_browser .content > div {
+    display: none;
+    padding: 10px;
+    overflow-y: auto;
+    height: 100%;
+}
+.news_browser .content > div.active {
+    box-sizing: border-box;
+    display: block;
+}
+.news_browser .content > div h1 {
+    margin-top: 0;
+}
