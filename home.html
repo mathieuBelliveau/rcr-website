@@ -2,15 +2,17 @@
 
     <head>
         <title>Test Page</title>
+        
         <link href="css/style.css" rel="stylesheet" />
         <link href="css/spring.css" rel="stylesheet" id="theme" />
+        
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Alegreya" rel="stylesheet">
         
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
         
-        <script>
+        <script type="text/javascript">
             $(document).ready(function() {
                 $('button[data-theme]').click(function() {
                     $('head link#theme').attr('href', $(this).data("theme"));
