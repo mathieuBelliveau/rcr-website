@@ -14,15 +14,19 @@
         
         <script type="text/javascript">
             $(document).ready(function() {
+				// theme buttons
                 $('button[data-theme]').click(function() {
                     $('head link#theme').attr('href', $(this).data("theme"));
                 })
-            });
-            
-            $(document).ready(function() {
-                $('#tribar').click(function() {
-                    
-                })
+				// news buttons
+				$('.news_browser .menu > a').each(function() {
+					$(this).click(function() {
+						$('.news_browser .menu > a, .news_browser .content > div').removeClass('active');
+						var that = $(this);
+						that.addClass('active');
+						$(that.data('id')).addClass('active');
+					})
+				})
             });
         </script>
     </head>
