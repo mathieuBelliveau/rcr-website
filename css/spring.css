@@ -6,7 +6,7 @@ body {
             to bottom,
             rgba(45, 39, 51, 0) 650px,
             rgba(45, 39, 51, 1) 950px),
-        url('../stockphotos/sergei-akulich-457851-unsplash.jpg');
+        url('../spring.jpg');
     background-size: 100%;
     background-repeat: no-repeat;
 }
@@ -16,6 +16,7 @@ body {
 }
 div.main_header {
     background: #507c22;
+    background: rgba(80, 124, 34, 0.5);
     color: #f2f3c3;
 }
 

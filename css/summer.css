@@ -1,6 +1,14 @@
 body {
     color: #fde49f;
     background: #50261e;
+    background: 
+        linear-gradient(
+            to bottom,
+            rgba(80, 38, 30, 0) 650px,
+            rgba(80, 38, 30, 1) 950px),
+        url('../summer.jpg');
+    background-size: 100%;
+    background-repeat: no-repeat;
 }
 .main_body {
     color: #174276;
@@ -8,6 +16,7 @@ body {
 }
 div.main_header {
     background: #e86137;
+    background: rgba(232, 97, 55, 0.5);
     color: #fff2c4;
 }
 
