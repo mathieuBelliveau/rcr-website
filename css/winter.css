@@ -7,17 +7,15 @@ body {
             rgba(26, 48, 51, 0) 650px,
             rgba(26, 48, 51, 1) 950px),
         url('../winter.jpg');
-    background-size: 100%;
-    background-repeat: no-repeat;
 }
 .main_body {
     color: #1b3918;
     background: #deece6;
-    background: rgba(222, 236, 230, 0.9);
+    background: rgba(222, 236, 230, 0.8);
 }
 div.main_header {
     background: #37afcb;
-    background: rgba(55, 175, 203, 0.5);
+    background: rgba(55, 175, 203, 0.66);
     color: #cefff9;
 }
 div.news > div.headlines > div {

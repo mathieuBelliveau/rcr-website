@@ -7,17 +7,15 @@ body {
             rgba(45, 39, 51, 0) 650px,
             rgba(45, 39, 51, 1) 950px),
         url('../spring.jpg');
-    background-size: 100%;
-    background-repeat: no-repeat;
 }
 .main_body {
     color: #111a62;
     background: #e2f1eb;
-    background: rgba(226, 241, 235, 0.9);
+    background: rgba(226, 241, 235, 0.8);
 }
 div.main_header {
     background: #507c22;
-    background: rgba(80, 124, 34, 0.5);
+    background: rgba(80, 124, 34, 0.66);
     color: #f2f3c3;
 }
 
