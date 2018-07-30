@@ -13,6 +13,7 @@ body {
 .main_body {
     color: #1b3918;
     background: #deece6;
+    background: rgba(222, 236, 230, 0.9);
 }
 div.main_header {
     background: #37afcb;

@@ -81,6 +81,13 @@ div.home_switcher > div {
     margin: 0 auto;
     text-align: center;
 }
+div.home_switcher > div > div {
+    border-radius: 15px;
+    width: 200px;
+    height: 120px;
+    background-size: cover;
+    border: 1px black solid;
+}
 
 div.news {
     padding: 0 10%;
@@ -177,19 +184,19 @@ div.tribar_container > div {
 }
 
 body {
-    transition: color 2s, background 2s;
+    transition: color 0.3s, background 0.3s;
 }
 .main_body {
-    transition: color 2s, background 2s;
+    transition: color 0.3s, background 0.3s;
 }
 .main_header {
-    transition: color 2s, background 2s;
+    transition: color 0.3s, background 0.3s;
 }
 div.news > div.headlines > div {
-    transition: background 2s;
+    transition: background 0.3s;
 }
 div.news > div.headlines > div > a {
-    transition: color 2s;
+    transition: color 0.3s;
 }
 
 
