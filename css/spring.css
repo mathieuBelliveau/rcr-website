@@ -11,11 +11,11 @@ body {
 .main_body {
     color: #111a62;
     background: #e2f1eb;
-    background: rgba(226, 241, 235, 0.9);
+    background: rgba(226, 241, 235, 0.8);
 }
 div.main_header {
     background: #507c22;
-    background: rgba(80, 124, 34, 0.5);
+    background: rgba(80, 124, 34, 0.66);
     color: #f2f3c3;
 }
 
