@@ -2,9 +2,11 @@ body {
     margin: 0;
     padding: 0;
     font-family: "Alegreya", "Georgia", serif;
-    font-weight: 700,
+    font-weight: 700;
+    font-size: 15;
+    background-size: 100%;
+    background-repeat: no-repeat;
 }
-
 a, a:visited {
     color: #0C0;
     text-decoration: none;
@@ -12,17 +14,15 @@ a, a:visited {
 a:hover {
     color: #0F0;
 }
-
 h1, h2, h3, h4, h5, h6 {
     font-weight: inherit;
 }
 h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child, h6:first-child {
     margin-top: 0;
 }
-
 h1 {
-    font-family: "Merriweather", "Avenir Next", sans-serif;
-    font-weight: 900i,
+    font-family: "Merriweather", sans-serif;
+    font-weight: 900i;
     font-size: 50px;
     text-transform: uppercase;
 }
@@ -31,7 +31,6 @@ h2 {
     font-weight: 400i;
     text-transform: uppercase;
 }
-
 div.main_content {
     width: 900px;
     margin: 0 auto;
@@ -56,11 +55,10 @@ div.main_header div.title {
 }
 div.main_header > div.logo {
     float: left;
-    height: 100px;
-    width: 100px;
+    height: 120px;
+    width: 120px;
     margin: 8px;
 }
-
 div.main_body {
     width: 900px;
 }
@@ -70,13 +68,11 @@ div.main_body > div {
 div.main_body > div:first-child {
     margin-top: 0;
 }
-
 div.main_footer {
     display: grid;
     grid-template-columns: 50% 50%;
     width: 100%;
 }
-
 div.home_switcher {
     display: grid;
     grid-template-columns: auto auto;
@@ -94,7 +90,6 @@ div.home_switcher > div > div {
     background-size: cover;
     border: 1px black solid;
 }
-
 div.news {
     padding: 0 10%;
 }
@@ -109,7 +104,6 @@ div.col1 {
     display: flex;
     flex-direction: column;
 }
-
 div.news > div > div {
     padding: 0 2.5%;
 }
@@ -117,7 +111,6 @@ div.news > div.headlines > div {
     text-align: center;
     padding-left: 50px;
 }
-
 div.title span.collapse {
     transition: color .4s linear .1s, letter-spacing .5s;
 }
@@ -126,7 +119,6 @@ div.title:hover span.collapse {
     letter-spacing: -42px;
     transition: color .3s, letter-spacing .5s;
 }
-
 .diamond {
     width: 0;
     height: 0;
@@ -145,7 +137,6 @@ div.title:hover span.collapse {
     border: 75px solid transparent;
     border-top-color: red;
 }
-
 .button {
     display: block; 
     width: 100%; 
@@ -156,12 +147,10 @@ div.title:hover span.collapse {
     border-radius: 50px; 
     color: red; 
 }
-
 .button:hover {
     color: blue;
     font-size: 28;
 }
-
 .tribar_container {
     display: table;
     background: cyan;
@@ -174,7 +163,6 @@ div.tribar_container:hover {
     border: 2px solid black;
     margin: -2px 8px 8px -2px;
 }
-
 /* consider using font awesome: https://fontawesome.com/icons/bars?style=solid */
 div.tribar_container > div:before {
     content: '\2630';
@@ -188,7 +176,6 @@ div.tribar_container > div {
     font-size: 45px;
     cursor: default;
 }
-
 body {
     transition: color 0.3s, background 0.3s;
 }
@@ -204,8 +191,6 @@ div.news > div.headlines > div {
 div.news > div.headlines > div > a {
     transition: color 0.3s;
 }
-
-
 .news_browser > div {
     height: 200px;
     width: 100%;

@@ -7,8 +7,6 @@ body {
             rgba(46, 46, 19, 0) 650px,
             rgba(46, 46, 19, 1) 950px),
         url('../autumn.jpg');
-    background-size: 100%;
-    background-repeat: no-repeat;
 }
 .main_body {
     color: #652615;

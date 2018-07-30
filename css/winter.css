@@ -7,8 +7,6 @@ body {
             rgba(26, 48, 51, 0) 650px,
             rgba(26, 48, 51, 1) 950px),
         url('../winter.jpg');
-    background-size: 100%;
-    background-repeat: no-repeat;
 }
 .main_body {
     color: #1b3918;

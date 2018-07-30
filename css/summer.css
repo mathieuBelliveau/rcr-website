@@ -7,8 +7,6 @@ body {
             rgba(80, 38, 30, 0) 650px,
             rgba(80, 38, 30, 1) 950px),
         url('../summer.jpg');
-    background-size: 100%;
-    background-repeat: no-repeat;
 }
 .main_body {
     color: #174276;
