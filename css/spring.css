@@ -1,13 +1,21 @@
 body {
     color: #e2f1eb;
     background: #2d2733;
+    background: 
+        linear-gradient(
+            to bottom,
+            rgba(45, 39, 51, 0) 650px,
+            rgba(45, 39, 51, 1) 950px),
+        url('../spring.jpg');
 }
 .main_body {
     color: #111a62;
     background: #e2f1eb;
+    background: rgba(226, 241, 235, 0.8);
 }
 div.main_header {
     background: #507c22;
+    background: rgba(80, 124, 34, 0.66);
     color: #f2f3c3;
 }
 

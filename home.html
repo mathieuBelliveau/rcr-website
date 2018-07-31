@@ -4,19 +4,35 @@
         <title>Test Page</title>
         
         <link href="css/style.css" rel="stylesheet" />
-        <link href="css/spring.css" rel="stylesheet" id="theme" />
+        <link href="css/summer.css" rel="stylesheet" id="theme" />
         
-        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Alegreya" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Alegreya:700|Merriweather:400i,900i|Montserrat:300,600i,900" rel="stylesheet" />
         
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
         
         <script type="text/javascript">
             $(document).ready(function() {
+				// theme buttons
                 $('button[data-theme]').click(function() {
                     $('head link#theme').attr('href', $(this).data("theme"));
                 })
+				// news buttons
+				$('.news_browser .menu > a').each(function() {
+					$(this).click(function() {
+						$('.news_browser .menu > a, .news_browser .content > div').removeClass('active');
+						var that = $(this);
+						that.addClass('active');
+						$(that.data('id')).addClass('active');
+					})
+				})
+				// image swap
+				$('*[data-alt-bg]').click(function() {
+					var that = $(this);
+					var old = that.css('background-image');
+					that.css('background-image', that.data('alt-bg'));
+					that.data('alt-bg', old);
+				})
+
             });
         </script>
     </head>
@@ -28,62 +44,110 @@
                     <img src="raw/RCRLogo-03.png">
                 </div>
                 <div class="title">
-                    R<span class="collapse">oyal&nbsp;</span>C<span class="collapse">anadian&nbsp;</span>R<span class="collapse">ecreation</span>
+                    R<span class="collapse">eal&nbsp;</span>C<span class="collapse">anadian&nbsp;</span>R<span class="collapse">ecreation</span>
                 </div>
+<!--
+                <div class="tribar_container">
+                    <div id="tribar"></div>
+                </div>
+-->
             </div>
             <div class="main_body">
+                <!-- can this be changed so that the text is inside the images like in /new/? -->
                 <div class="home_switcher">
                     <div>
-                        <div style="width: 200px; height: 120px; background: red; border: 1px black solid; "></div>
+                        <div data-alt-bg="url(adventure2.jpg)" style="background: url(adventure.jpg); background-size: cover;"></div>
                         adventure
                     </div>
                     <div>
-                        <div style="width: 200px; height: 120px; background: cyan; border: 1px black solid"></div>
+                        <div data-alt-bg="url(events2.jpg)" style="background: url(events.png); background-size: cover;"></div>
                         events
                     </div>
                     <div>
-                        <div style="width: 200px; height: 120px; background: orange; border: 1px black solid"></div>
+                        <div data-alt-bg="url(history2.jpg)" style="background: url(history.png); background-size: cover;"></div>
                         history
                     </div>
                     <div>
-                        <div style="width: 200px; height: 120px; background: #0F0; border: 1px black solid"></div>
+                        <div data-alt-bg="url(camping2.jpg)" style="background: url(camping.png); background-size: cover;"></div>
                         camping
                     </div>
                 </div>
-                <div class="news">
-                    <div class="col2 previews">
-                        <div>
-                            <h2>Title for Story 1</h2>
-                            <p>In vulputate massa fringilla, imperdiet odio eget, molestie elit. Sed lacinia est a elit porta tincidunt. Cras rutrum elit at varius commodo. Praesent cursus turpis non urna pulvinar, eu vestibulum.</p>
-                            <a href="javascript:void()">Read more...</a>
-                        </div>
-                        <div>
-                            <h2>Title for Story 2</h2>
-                            <p>Sed vitae risus et velit blandit ultricies. Curabitur vel ante et nisi tristique rutrum. Pellentesque luctus scelerisque ultricies. Pellentesque vehicula pharetra libero non accumsan. Fusce vehicula ex ligula, quis congue.</p>
-                            <a href="javascript:void()">Read more...</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="news">
-                    <div class="col1 headlines">
-                        <div><a href="javascript:void()"><h2>Title for Story 3</h2></a></div>
-                        <div><a href="javascript:void()"><h2>Title for Story 4</h2></a></div>
-                        <div><a href="javascript:void()"><h2>Title for Story 5</h2></a></div>
-                    </div>
-                </div>
+				<div class="news_browser">
+					<div>
+						<div class="menu">
+							<a href="javascript:void(0)" data-id="#news_item_1" class="active">We Have A New Website!</a>
+							<a href="javascript:void(0)" data-id="#news_item_2">A Really Long Title For Special Story 2</a>
+							<a href="javascript:void(0)" data-id="#news_item_3">Title For Story 3</a>
+							<a href="javascript:void(0)" data-id="#news_item_4">Title For Story 4</a>
+							<a href="javascript:void(0)" data-id="#news_item_5">Title For Story 5</a>
+							<div><a href="javascript:void(0)">visit the blog</a></div>
+						</div>
+						<div class="content">
+							<div id="news_item_1" class="active">
+								<h2>We Have A New Website!</h2>
+								Vestibulum ut sagittis ipsum, sed ultrices augue.
+								Cras eleifend efficitur lectus, sed sollicitudin nisl pulvinar eu.
+								Fusce sollicitudin ornare nisi in fringilla.
+								Maecenas sollicitudin sem ac condimentum pretium.
+								Donec viverra faucibus commodo.
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+							</div>
+							<div id="news_item_2">
+								<h2>A Really Long Title For Special Story 2</h2>
+								Integer bibendum nunc in iaculis lobortis.
+								Nulla et bibendum eros, ut ultricies diam.
+								Aliquam et purus augue.
+								Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+								Sed vulputate posuere blandit.
+								Etiam blandit in purus eu pulvinar.
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+							</div>
+							<div id="news_item_3">
+								<h2>Title For Story 3</h2>
+								Nam commodo ullamcorper blandit.
+								Quisque commodo sed lorem id dignissim.
+								Praesent accumsan ipsum eu massa tristique pellentesque.
+								Morbi laoreet turpis vitae nibh mollis tincidunt.
+								Sed interdum vestibulum massa nec varius.
+								Integer pellentesque sapien ac odio consequat, et tempus arcu consequat.
+							</div>
+							<div id="news_item_4">
+								<h2>Title For Story 4</h2>
+								Quisque egestas sagittis accumsan.
+								Suspendisse potenti.
+								Nullam nec lorem vel augue pretium elementum.
+								Sed nec tellus malesuada, fermentum lorem vel, venenatis ex.
+								Etiam turpis erat, suscipit non auctor non, pharetra blandit nisl.
+								Nullam tincidunt ullamcorper diam nec consectetur.
+							</div>
+							<div id="news_item_5">
+								<h2>Title For Story 5</h2>
+								Quisque egestas sagittis accumsan.
+								Suspendisse potenti.
+								Nullam nec lorem vel augue pretium elementum.
+								Sed nec tellus malesuada, fermentum lorem vel, venenatis ex.
+								Etiam turpis erat, suscipit non auctor non, pharetra blandit nisl.
+								Nullam tincidunt ullamcorper diam nec consectetur.
+							</div>
+						</div>
+					</div>
+				</div>
                 <div>
                     <div style="width: 700px; height: 300px; display: table; margin: 0 auto;">
-                        <div style="background: green; display: table-cell; vertical-align: middle; text-align: center;">map</div>
+                        <div style="background: green; display: table-cell; vertical-align: middle; text-align: center;">
+                            <img style="height: 100%; width: 100%;"src="map.png"></div>
                     </div>
                 </div>
                 <div>
-                    <a href="javascript:void()" style="display: block; width: 50%;  background: pink; margin: 0 auto; text-align: center; border: 1px solid black; border-radius: 50px; color: red; padding: 10px; font-size: 30px;">Contact Us!</a>
+                    <a href="javascript:void()" class="contact" style="display: block; width: 50%;  background: pink; margin: 0 auto; text-align: center; border: 1px solid black; border-radius: 50px; color: red; padding: 10px; font-size: 30px;">Contact Us!</a>
                 </div>
             </div>
+<!--
             <div class="main_footer">
                 <div style="text-align: left; background: yellow;">Left aligned</div>
                 <div style="text-align: right; background: orange;">and right aligned, respectively</div>
             </div>
+-->
             <div style="width: 100%; height: 100px;display:  grid; grid-template-columns: 25% 25% 25% 25%;">
                 <button id="winter" class="button" data-theme="css/winter.css">Winter</button>
                 <button id="spring" class="button" data-theme="css/spring.css">Spring</button>
