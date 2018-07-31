@@ -64,6 +64,13 @@ div.main_header > div.logo {
     height: 120px;
     margin: 8px;
 }
+
+div.logo > img {
+    height: 100%;
+    width: 100%;
+        
+}
+
 div.main_body {
     width: 900px;
 }
