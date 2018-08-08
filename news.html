@@ -51,7 +51,7 @@
 -->
             </div>
             <div class="main_body">
-                <div class="news_list">
+                <div class="news_list" id="news_content">
                     <div>
                         <h1>We Have A New Website!</h1>
                         <p>
@@ -104,6 +104,15 @@
             </div>
         </div>
         <!-- you will be missed, main_footer -->
-        </div>
+        <script>
+            function handleResponse(response) {
+                div = document.createElement('div');
+                div.style.fontFamily = "monospace";
+                div.style.whiteSpace = "pre";
+                div.innerText = JSON.stringify(response, null, 4);
+                $('#news_content').prepend(div);
+            }
+        </script>
+        <script src="https://www.googleapis.com/blogger/v3/blogs/2621225609080412079?callback=handleResponse&key=AIzaSyB_0veJYGONGLmmAU73gEhvlI5P6I-xbrY"></script>
 </body>
 </html>
