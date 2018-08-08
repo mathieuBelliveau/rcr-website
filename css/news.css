@@ -1,0 +1,12 @@
+.news_list { }
+.news_list > div {
+    background: green;
+    margin: 20px;
+    border-radius: 20px;
+}
+.news_list > div h1 {
+    background: red;
+}
+.news_list > div p {
+    margin: 10px 30px;
+}

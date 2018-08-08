@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <link href="css/style.css" rel="stylesheet" />
+        <link href="css/news.css" rel="stylesheet" />
+        <link href="css/summer.css" rel="stylesheet" id="theme" />
+        
+        <link href="https://fonts.googleapis.com/css?family=Alegreya:700|Merriweather:400i,900i|Montserrat:300,600i,900" rel="stylesheet" />
+        
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        
+        <script type="text/javascript">
+            $(document).ready(function() {
+				// theme buttons
+                $('button[data-theme]').click(function() {
+                    $('head link#theme').attr('href', $(this).data("theme"));
+                })
+				// news buttons
+				$('.news_browser .menu > a').each(function() {
+					$(this).click(function() {
+						$('.news_browser .menu > a, .news_browser .content > div').removeClass('active');
+						var that = $(this);
+						that.addClass('active');
+						$(that.data('id')).addClass('active');
+					})
+				})
+				// image swap
+				$('*[data-alt-bg]').click(function() {
+					var that = $(this);
+					var old = that.css('background-image');
+					that.css('background-image', that.data('alt-bg'));
+					that.data('alt-bg', old);
+				})
+
+            });
+        </script>
+</head>
+<body>
+        <div class="main_content">
+            <div class="main_header">
+                <div class="logo">
+                    <img src="raw/RCRLogo-03.png">
+                </div>
+                <div class="title">
+                    R<span class="collapse">eal&nbsp;</span>C<span class="collapse">anadian&nbsp;</span>R<span class="collapse">ecreation</span>
+                </div>
+<!--
+                <div class="tribar_container">
+                    <div id="tribar"></div>
+                </div>
+-->
+            </div>
+            <div class="main_body">
+                <div class="news_list">
+                    <div>
+                        <h1>Story Title With Really Long Special Title for News Article 1</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <img style="width: 100%; height: 300px;" />
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <img style="width: 100%; height: 300px;" />
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                    <div>
+                        <h1>Story 1</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <img style="width: 100%; height: 300px;" />
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <img style="width: 100%; height: 300px;" />
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- you will be missed, main_footer -->
+        </div>
+</body>
+</html>
