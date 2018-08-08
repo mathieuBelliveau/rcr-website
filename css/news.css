@@ -1,4 +1,7 @@
 .news_list { }
+.news_list > div:first-child {
+    margin-top: 0px;
+}
 .news_list > div {
     background: green;
     margin: 20px;
