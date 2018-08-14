@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head>
+    <head>
         <link href="css/style.css" rel="stylesheet" />
         <link href="css/news.css" rel="stylesheet" />
         <link href="css/summer.css" rel="stylesheet" id="theme" />
@@ -11,31 +11,30 @@
         
         <script type="text/javascript">
             $(document).ready(function() {
-				// theme buttons
+                // theme buttons
                 $('button[data-theme]').click(function() {
                     $('head link#theme').attr('href', $(this).data("theme"));
                 })
-				// news buttons
-				$('.news_browser .menu > a').each(function() {
-					$(this).click(function() {
-						$('.news_browser .menu > a, .news_browser .content > div').removeClass('active');
-						var that = $(this);
-						that.addClass('active');
-						$(that.data('id')).addClass('active');
-					})
-				})
-				// image swap
-				$('*[data-alt-bg]').click(function() {
-					var that = $(this);
-					var old = that.css('background-image');
-					that.css('background-image', that.data('alt-bg'));
-					that.data('alt-bg', old);
-				})
-
+                // news buttons
+                $('.news_browser .menu > a').each(function() {
+                    $(this).click(function() {
+                        $('.news_browser .menu > a, .news_browser .content > div').removeClass('active');
+                            var that = $(this);
+                            that.addClass('active');
+                            $(that.data('id')).addClass('active');
+                    })
+                })
+                // image swap
+                $('*[data-alt-bg]').click(function() {
+                    var that = $(this);
+                    var old = that.css('background-image');
+                    that.css('background-image', that.data('alt-bg'));
+                    that.data('alt-bg', old);
+                })
             });
         </script>
-</head>
-<body>
+    </head>
+    <body>
         <div class="main_content">
             <div class="main_header">
                 <div class="logo">
@@ -56,40 +55,40 @@
                         <h1>We Have A New Website!</h1>
                         <p>
                             Vestibulum ut sagittis ipsum, sed ultrices augue.
-							Cras eleifend efficitur lectus, sed sollicitudin nisl pulvinar eu.
-							Fusce sollicitudin ornare nisi in fringilla.
-							Maecenas sollicitudin sem ac condimentum pretium.
-							Donec viverra faucibus commodo.
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                           Cras eleifend efficitur lectus, sed sollicitudin nisl pulvinar eu.
+                           Fusce sollicitudin ornare nisi in fringilla.
+                           Maecenas sollicitudin sem ac condimentum pretium.
+                           Donec viverra faucibus commodo.
+                           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         </p>
                         <img style="width: 100%; height: 300px;" />
                         <p>
                             Vestibulum ut sagittis ipsum, sed ultrices augue.
-							Cras eleifend efficitur lectus, sed sollicitudin nisl pulvinar eu.
-							Fusce sollicitudin ornare nisi in fringilla.
-							Maecenas sollicitudin sem ac condimentum pretium.
-							Donec viverra faucibus commodo.
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                           Cras eleifend efficitur lectus, sed sollicitudin nisl pulvinar eu.
+                           Fusce sollicitudin ornare nisi in fringilla.
+                           Maecenas sollicitudin sem ac condimentum pretium.
+                           Donec viverra faucibus commodo.
+                           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         </p>
                         <img style="width: 100%; height: 300px;" />
                         <p>
                             Vestibulum ut sagittis ipsum, sed ultrices augue.
-							Cras eleifend efficitur lectus, sed sollicitudin nisl pulvinar eu.
-							Fusce sollicitudin ornare nisi in fringilla.
-							Maecenas sollicitudin sem ac condimentum pretium.
-							Donec viverra faucibus commodo.
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                           Cras eleifend efficitur lectus, sed sollicitudin nisl pulvinar eu.
+                           Fusce sollicitudin ornare nisi in fringilla.
+                           Maecenas sollicitudin sem ac condimentum pretium.
+                           Donec viverra faucibus commodo.
+                           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         </p>
                     </div>
                     <div>
                         <h1>A Really Long Title For Special Story 2</h1>
                         <p>
                             Vestibulum ut sagittis ipsum, sed ultrices augue.
-							Cras eleifend efficitur lectus, sed sollicitudin nisl pulvinar eu.
-							Fusce sollicitudin ornare nisi in fringilla.
-							Maecenas sollicitudin sem ac condimentum pretium.
-							Donec viverra faucibus commodo.
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                           Cras eleifend efficitur lectus, sed sollicitudin nisl pulvinar eu.
+                           Fusce sollicitudin ornare nisi in fringilla.
+                           Maecenas sollicitudin sem ac condimentum pretium.
+                           Donec viverra faucibus commodo.
+                           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         </p>
                     </div>
                     <div>
@@ -106,13 +105,43 @@
         <!-- you will be missed, main_footer -->
         <script>
             function handleResponse(response) {
-                div = document.createElement('div');
-                div.style.fontFamily = "monospace";
-                div.style.whiteSpace = "pre";
-                div.innerText = JSON.stringify(response, null, 4);
-                $('#news_content').prepend(div);
+                var fragment, container, title, titleText, content, image
+                fragment = document.createDocumentFragment()
+                container = document.createElement('div');
+                container.style.whiteSpace = 'pre';
+                container.style.fontFamily = 'monospace';
+                container.innerText = JSON.stringify(response, null, '    ');
+                fragment.appendChild(container)
+                var items = response.items
+                for (const item of items) {
+                    titleText = document.createElement('h1')
+                    titleText.innerText = item.title
+                    title = document.createElement('a');
+                    title.href = item.url;
+                    title.appendChild(titleText);
+                    content = document.createElement('div');
+                    content.innerHTML = item.content;
+                    container = document.createElement('div');
+                    container.appendChild(title);
+                    container.appendChild(content);
+                    container.appendChild(createAuthorTag(item.author));
+                    fragment.appendChild(container);
+                }
+                $('#news_content').prepend(fragment);
+            }
+            function createAuthorTag(author) {
+                var container, image, name
+                image = document.createElement('img');
+                image.src = author.image.url;
+                image.style.verticalAlign = 'middle';
+                name = document.createTextNode(author.displayName)
+                container = document.createElement('a');
+                container.href = author.url;
+                container.appendChild(image);
+                container.appendChild(name);
+                return container
             }
         </script>
-        <script src="https://www.googleapis.com/blogger/v3/blogs/2621225609080412079?callback=handleResponse&key=AIzaSyB_0veJYGONGLmmAU73gEhvlI5P6I-xbrY"></script>
+        <script src="https://www.googleapis.com/blogger/v3/blogs/2621225609080412079/posts?maxResults=5&fields=nextPageToken,items(published,updated,url,title,content,author(displayName,url,image))&callback=handleResponse&key=AIzaSyB_0veJYGONGLmmAU73gEhvlI5P6I-xbrY"></script>
 </body>
 </html>
