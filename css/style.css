@@ -123,7 +123,7 @@ div.news > div.headlines > div {
 div.title span.collapse {
     transition: color .4s linear .1s, letter-spacing .5s;
 }
-div.title:hover span.collapse {
+div.title span.collapse.hide {
     color: transparent;
     letter-spacing: -42px;
     transition: color .3s, letter-spacing .5s;
