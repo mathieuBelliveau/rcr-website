@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="css/style.css" rel="stylesheet" />
+        <link href="css/news.css" rel="stylesheet" />
+        <link href="css/summer.css" rel="stylesheet" id="theme" />
+        
+        <link href="https://fonts.googleapis.com/css?family=Alegreya:700|Merriweather:400i,900i|Montserrat:300,600i,900" rel="stylesheet" />
+        
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        
+        <script type="text/javascript">
+            $(document).ready(function() {
+                // theme buttons
+                $('button[data-theme]').click(function() {
+                    $('head link#theme').attr('href', $(this).data("theme"));
+                })
+                // news buttons
+                $('.news_browser .menu > a').each(function() {
+                    $(this).click(function() {
+                        $('.news_browser .menu > a, .news_browser .content > div').removeClass('active');
+                            var that = $(this);
+                            that.addClass('active');
+                            $(that.data('id')).addClass('active');
+                    })
+                })
+                // image swap
+                $('*[data-alt-bg]').click(function() {
+                    var that = $(this);
+                    var old = that.css('background-image');
+                    that.css('background-image', that.data('alt-bg'));
+                    that.data('alt-bg', old);
+                })
+            });
+        </script>
+    </head>
+    <body>
+        <div class="main_content">
+            <div class="main_header">
+                <div class="logo">
+                    <img src="raw/RCRLogo-03.png">
+                </div>
+                <div class="title">
+                    R<span class="collapse">eal&nbsp;</span>C<span class="collapse">anadian&nbsp;</span>R<span class="collapse">ecreation</span>
+                </div>
+<!--
+                <div class="tribar_container">
+                    <div id="tribar"></div>
+                </div>
+-->
+            </div>
+            <div class="main_body">
+                <div>
+                    <div style="background: green; height: 300px; margin: 0 20px;"></div>
+                    <div style="margin: 0 50px;">
+                        <span style="font-size: 100px;">Call 902-888-888</span><br/>
+                        <span style="font-size: 80px;">or</span><br />
+                        <span style="font-size: 100px;">Send us a message:</span><br/>
+                        <center>
+                            <textarea style="width: 95%; height: 200px"></textarea>
+                            <textarea style="width: 95%;"></textarea>
+                        </center>
+                        <div class="col2">
+                            <div>
+                                <label>
+                                    <div style="border: 1px solid black; padding: 15px; display: inline-block; font-size: 30px;">
+                                        Captcha <input size="30" type="checkbox" />
+                                    </div>
+                                </label>
+                            </div>
+                            <div style="display: table; height: 100%;">
+                                <div style="display: table-cell; text-align: right; vertical-align: middle;">
+                                    <button style="font-size: 30px;">Send</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div></div>
+            </div>
+        </div>
+</body>
+</html>

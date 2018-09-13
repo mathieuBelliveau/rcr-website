@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="css/style.css" rel="stylesheet" />
+        <link href="css/news.css" rel="stylesheet" />
+        <link href="css/summer.css" rel="stylesheet" id="theme" />
+        
+        <link href="https://fonts.googleapis.com/css?family=Alegreya:700|Merriweather:400i,900i|Montserrat:300,600i,900" rel="stylesheet" />
+        
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        
+        <script type="text/javascript">
+            $(document).ready(function() {
+                // theme buttons
+                $('button[data-theme]').click(function() {
+                    $('head link#theme').attr('href', $(this).data("theme"));
+                })
+                // news buttons
+                $('.news_browser .menu > a').each(function() {
+                    $(this).click(function() {
+                        $('.news_browser .menu > a, .news_browser .content > div').removeClass('active');
+                            var that = $(this);
+                            that.addClass('active');
+                            $(that.data('id')).addClass('active');
+                    })
+                })
+                // image swap
+                $('*[data-alt-bg]').click(function() {
+                    var that = $(this);
+                    var old = that.css('background-image');
+                    that.css('background-image', that.data('alt-bg'));
+                    that.data('alt-bg', old);
+                })
+            });
+        </script>
+    </head>
+    <body>
+        <div class="main_content">
+            <div class="main_header">
+                <div class="logo">
+                    <img src="raw/RCRLogo-03.png">
+                </div>
+                <div class="title">
+                    R<span class="collapse">eal&nbsp;</span>C<span class="collapse">anadian&nbsp;</span>R<span class="collapse">ecreation</span>
+                </div>
+<!--
+                <div class="tribar_container">
+                    <div id="tribar"></div>
+                </div>
+-->
+            </div>
+            <div class="main_body">
+                <div style="text-align: center;">map stuff</div>
+                <div id="map" style="background:magenta; width: 100%; height: 450px;"></div>
+                <div style="text-align: center;">map stuff</div>
+                <div>
+                    <div style="width: 100%; height: 500px; background: green">pre-rendered map</div>
+                </div>
+            </div>
+        </div>
+        <script>
+            function coord(lat, lng) {
+                return { lat: lat, lng };
+            }
+            function initMap() {
+                var map = new google.maps.Map(document.getElementById('map'), {
+                    zoom: 16,
+                    center: coord(45.69103, -62.7021065),
+                    mapTypeId: 'terrain'
+                });
+                var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
+                var icons = {
+                    parking: {
+                        icon: iconBase + 'parking_lot_maps.png'
+                    },
+                    library: {
+                        icon: iconBase + 'library_maps.png'
+                    },
+                    info: {
+                        icon: iconBase + 'info-i_maps.png'
+                    }
+                };
+                var features = [
+                    {
+                        position: coord(45.690953, -62.703000),
+                        type: 'info',
+                        name: 'Information Center',
+                        content: 'Your first stop! Something relevant or interesting.'
+                    }, {
+                        position: coord(45.692435, -62.701935),
+                        type: 'library'
+                    }, {
+                        position: coord(45.691060, -62.704094),
+                        type: 'parking',
+                        name: 'Parking Lot'
+                    }
+                ];
+                features.forEach(function(feature, i) {
+                    setTimeout(function() {
+                        let props = {
+                            position: feature.position,
+                            icon: icons[feature.type].icon,
+                            animation: google.maps.Animation.DROP,
+                            map: map
+                        };
+                        if (feature.name) {
+                            props.title = feature.name
+                        }
+                        let marker = new google.maps.Marker(props);
+                        if (feature.content) {
+                            let infoWindow = new google.maps.InfoWindow({ content: feature.content })
+                            marker.addListener('click', function() {
+                                infoWindow.open(map, marker);
+                            })
+                        }
+                    }, i * 400);
+                });
+                
+                var polygonCoords = [
+                    coord(45.692401, -62.706419),
+                    coord(45.693400, -62.701032),
+                    coord(45.694004, -62.699573),
+                    coord(45.692011, -62.697063),
+                    coord(45.691172, -62.698415),
+                    coord(45.690000, -62.698000),
+                    coord(45.690000, -62.698000),
+                    coord(45.688503, -62.705496),
+                    coord(45.692401, -62.706419)
+                ];
+                var polygon = new google.maps.Polygon({
+                    paths: polygonCoords,
+                    strokeColor: '#FF0000',
+                    strokeOpacity: 0.8,
+                    stokeWeight: 2,
+                    fillColor: '#FF0000',
+                    fillOpacity: 0.35
+                });
+                polygon.setMap(map);
+                var polyLineCoords = [
+                    coord(45.690000, -62.70580),
+                    coord(45.691074, -62.703521),
+                    coord(45.691888, -62.703139),
+                    coord(45.692800, -62.700750),
+                    coord(45.691127, -62.699220),
+                    coord(45.690806, -62.699431),
+                    coord(45.690900, -62.699756),
+                    coord(45.690660, -62.700042),
+                    coord(45.690433, -62.703081),
+                    coord(45.691074, -62.703521)
+                ];
+                var polyLine = new google.maps.Polyline({
+                    path: polyLineCoords,
+                    strokeColor: '#0000FF',
+                    strokeWeight: 2
+                });
+                polyLine.setMap(map);
+            }
+</script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAuOE9Cm2QAb-bov1xMzq2Lz97QjZAz4yk&callback=initMap"></script>
+</body>
+</html>
