@@ -53,6 +53,9 @@
                 <div style="text-align: center;">map stuff</div>
                 <div id="map" style="background:magenta; width: 100%; height: 450px;"></div>
                 <div style="text-align: center;">map stuff</div>
+                <div>
+                    <div style="width: 100%; height: 500px; background: green">pre-rendered map</div>
+                </div>
             </div>
         </div>
         <script>
@@ -65,6 +68,54 @@
                     center: coord(45.69103, -62.7021065),
                     mapTypeId: 'terrain'
                 });
+                var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
+                var icons = {
+                    parking: {
+                        icon: iconBase + 'parking_lot_maps.png'
+                    },
+                    library: {
+                        icon: iconBase + 'library_maps.png'
+                    },
+                    info: {
+                        icon: iconBase + 'info-i_maps.png'
+                    }
+                };
+                var features = [
+                    {
+                        position: coord(45.690953, -62.703000),
+                        type: 'info',
+                        name: 'Information Center',
+                        content: 'Your first stop! Something relevant or interesting.'
+                    }, {
+                        position: coord(45.692435, -62.701935),
+                        type: 'library'
+                    }, {
+                        position: coord(45.691060, -62.704094),
+                        type: 'parking',
+                        name: 'Parking Lot'
+                    }
+                ];
+                features.forEach(function(feature, i) {
+                    setTimeout(function() {
+                        let props = {
+                            position: feature.position,
+                            icon: icons[feature.type].icon,
+                            animation: google.maps.Animation.DROP,
+                            map: map
+                        };
+                        if (feature.name) {
+                            props.title = feature.name
+                        }
+                        let marker = new google.maps.Marker(props);
+                        if (feature.content) {
+                            let infoWindow = new google.maps.InfoWindow({ content: feature.content })
+                            marker.addListener('click', function() {
+                                infoWindow.open(map, marker);
+                            })
+                        }
+                    }, i * 400);
+                });
+                
                 var polygonCoords = [
                     coord(45.692401, -62.706419),
                     coord(45.693400, -62.701032),

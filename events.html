@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="css/style.css" rel="stylesheet" />
+        <link href="css/news.css" rel="stylesheet" />
+        <link href="css/summer.css" rel="stylesheet" id="theme" />
+        
+        <link href="https://fonts.googleapis.com/css?family=Alegreya:700|Merriweather:400i,900i|Montserrat:300,600i,900" rel="stylesheet" />
+        
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        
+        <script type="text/javascript">
+            $(document).ready(function() {
+                // theme buttons
+                $('button[data-theme]').click(function() {
+                    $('head link#theme').attr('href', $(this).data("theme"));
+                })
+                // news buttons
+                $('.news_browser .menu > a').each(function() {
+                    $(this).click(function() {
+                        $('.news_browser .menu > a, .news_browser .content > div').removeClass('active');
+                            var that = $(this);
+                            that.addClass('active');
+                            $(that.data('id')).addClass('active');
+                    })
+                })
+                // image swap
+                $('*[data-alt-bg]').click(function() {
+                    var that = $(this);
+                    var old = that.css('background-image');
+                    that.css('background-image', that.data('alt-bg'));
+                    that.data('alt-bg', old);
+                })
+            });
+        </script>
+    </head>
+    <body>
+        <div class="main_content">
+            <div class="main_header">
+                <div class="logo">
+                    <img src="raw/RCRLogo-03.png">
+                </div>
+                <div class="title">
+                    R<span class="collapse">eal&nbsp;</span>C<span class="collapse">anadian&nbsp;</span>R<span class="collapse">ecreation</span>
+                </div>
+<!--
+                <div class="tribar_container">
+                    <div id="tribar"></div>
+                </div>
+-->
+            </div>
+            <div class="main_body">
+                <div style="text-align: center;">map stuff</div>
+                <iframe src="https://calendar.google.com/calendar/embed?src=magnumit.ca_7i5jsf1vouc2b3h5tssptjkkt8%40group.calendar.google.com&ctz=America%2FHalifax" style="border: 0" width="900" height="600" frameborder="0" scrolling="no"></iframe>
+                <div style="text-align: center;">map stuff</div>
+            </div>
+        </div>
+</body>
+</html>
