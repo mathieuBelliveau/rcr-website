@@ -255,4 +255,28 @@ div.news > div.headlines > div > a {
     margin-top: 0;
 }
 
+.circle {
+  height: 100px;
+  width: 100px;
+  background-color: firebrick;
+  border-radius: 50%;
+  position: absolute;
+  left: 385px;
+  top: 200px;
+      
+}
 
+.thumb {
+    height:100%;
+    width: 100%; 
+}
+.youtube {
+    background-color: pink;
+    height:100%;
+    width:100%;
+    position: relative;
+}
+.youtube > iframe {
+    height:100%;
+    width: 100%;
+}
