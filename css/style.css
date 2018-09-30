@@ -256,18 +256,27 @@ div.news > div.headlines > div > a {
 }
 
 .circle {
-  height: 25px;
-  width: 25px;
-  background-color: #bbb;
+  height: 100px;
+  width: 100px;
+  background-color: firebrick;
   border-radius: 50%;
-  display: inline-block;
+  position: absolute;
+  left: 385px;
+  top: 200px;
+      
 }
 
 .thumb {
-    height:50%;
+    height:100%;
+    width: 100%; 
 }
 .youtube {
     background-color: pink;
     height:100%;
-    width:100%
+    width:100%;
+    position: relative;
+}
+.youtube > iframe {
+    height:100%;
+    width: 100%;
 }
