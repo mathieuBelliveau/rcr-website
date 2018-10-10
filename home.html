@@ -33,6 +33,7 @@
 					that.data('alt-bg', old);
 				})
                 //season cycle
+                //TODO - slower transition
                 $('.logo').click(function() {
                     var that = $('.logo > div');
                     var s = that.data('count');//how to get data attr as integer?
@@ -164,12 +165,6 @@
                 <div style="text-align: right; background: orange;">and right aligned, respectively</div>
             </div>
 -->
-            <div style="width: 100%; height: 100px;display:  grid; grid-template-columns: 25% 25% 25% 25%;">
-                <button id="winter" class="button" data-theme="css/winter.css">Winter</button>
-                <button id="spring" class="button" data-theme="css/spring.css">Spring</button>
-                <button id="summer" class="button" data-theme="css/summer.css">Summer</button>
-                <button id="autumn" class="button" data-theme="css/autumn.css">Autumn</button>
-            </div>
         </div>
         <script>
             $('div.main_header div.title').click(function() { $('div.main_header div.title span.collapse').toggleClass('hide') })

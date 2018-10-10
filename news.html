@@ -31,14 +31,33 @@
                     that.css('background-image', that.data('alt-bg'));
                     that.data('alt-bg', old);
                 })
+                //season cycle
+                //TODO - slower transition
+                $('.logo').click(function() {
+                    var that = $('.logo > div');
+                    var s = that.data('count');//how to get data attr as integer?
+                    cycleSeason(that, s);
+                    
+                    function cycleSeason(t, s){
+                    var seasons = ["summer", "autumn", "winter", "spring"];
+                    s = (s+1)%4;
+                    t.data('count', s);
+                    that.css('background-image', 'url(raw/RCRLogo_'+seasons[s]+'.png)');
+                        
+                    $('head link#theme').attr('href', 'css/' + seasons[s] + '.css');
+                    }
+
+                })
             });
         </script>
     </head>
+
     <body>
         <div class="main_content">
             <div class="main_header">
                 <div class="logo">
-                    <img src="raw/RCRLogo-03.png">
+                    <div data-count="0" style="background:url(raw/RCRLogo_Summer.png);background-size: cover;width:100%;height:100%;">
+                    </div>
                 </div>
                 <div class="title">
                     R<span class="collapse">eal&nbsp;</span>C<span class="collapse">anadian&nbsp;</span>R<span class="collapse">ecreation</span>
@@ -52,6 +71,7 @@
             <div class="main_body">
                 <div class="news_list" id="news_content">
                     <div>
+<!--
                         <h1>We Have A New Website!</h1>
                         <p>
                             Vestibulum ut sagittis ipsum, sed ultrices augue.
@@ -99,6 +119,7 @@
                         <img style="width: 100%; height: 300px;" />
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                     </div>
+-->
                 </div>
             </div>
         </div>
@@ -110,7 +131,7 @@
                 container = document.createElement('div');
                 container.style.whiteSpace = 'pre';
                 container.style.fontFamily = 'monospace';
-                container.innerText = JSON.stringify(response, null, '    ');
+                //container.innerText = JSON.stringify(response, null, '    ');
                 fragment.appendChild(container)
                 var items = response.items
                 for (const item of items) {
