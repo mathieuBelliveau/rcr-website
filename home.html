@@ -42,7 +42,7 @@
                     var seasons = ["summer", "autumn", "winter", "spring"];
                     s = (s+1)%4;
                     t.data('count', s);
-                    that.css('background-image', 'url(/raw/RCRLogo_' + seasons[s] + '.png)');
+                    that.css('background-image', 'url(raw/RCRLogo_'+seasons[s]+'.png)');
                         
                     $('head link#theme').attr('href', 'css/' + seasons[s] + '.css');
                     }
