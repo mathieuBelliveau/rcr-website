@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 
     <head>
@@ -33,7 +32,67 @@
 					that.css('background-image', that.data('alt-bg'));
 					that.data('alt-bg', old);
 				})
+                //season cycle
+                //TODO - slower transition
+                $('.logo').click(function() {
+                    var that = $('.logo > div');
+                    var s = that.data('count');//how to get data attr as integer?
+                    cycleSeason(that, s);
+                    
+                    function cycleSeason(t, s){
+                    var seasons = ["summer", "autumn", "winter", "spring"];
+                    s = (s+1)%4;
+                    t.data('count', s);
+                    that.css('background-image', 'url(raw/RCRLogo_'+seasons[s]+'.png)');
+                        
+                    $('head link#theme').attr('href', 'css/' + seasons[s] + '.css');
+                    }
 
+                })
             });
         </script>
     </head>
+
+    <body>
+        <div class="main_content">
+            <div class="main_header">
+                <div class="logo">
+                    <div data-count="0" style="background:url(raw/RCRLogo_Summer.png);background-size: cover;width:100%;height:100%;">
+                    </div>
+                </div>
+                <div class="title">
+                    R<span class="collapse">eal&nbsp;</span>C<span class="collapse">anadian&nbsp;</span>R<span class="collapse">ecreation</span>
+                </div>
+<!--
+                <div class="tribar_container">
+                    <div id="tribar"></div>
+                </div>
+-->
+            </div>
+            <div class="main_body">
+                <div style="height: 300px; background: lightgreen;"></div>
+                <div class="col2">
+                    <div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                    <div>
+                        <div style="height: 500px; background: gray;"></div>
+                    </div>
+                </div>
+                <div style="height: 300px; border: 3px dashed black;">tiered campsites?</div>
+            </div>
+<!--
+            <div class="main_footer">
+                <div style="text-align: left; background: yellow;">Left aligned</div>
+                <div style="text-align: right; background: orange;">and right aligned, respectively</div>
+            </div>
+-->
+        </div>
+        <script>
+            $('div.main_header div.title').click(function() { $('div.main_header div.title span.collapse').toggleClass('hide') })
+        </script>
+        
+    </body>
+
+</html>
