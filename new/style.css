@@ -111,11 +111,7 @@ body {
 }
 
 
-div.home_switcher {
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    padding: 10px;
-}
+
 div.home_switcher > div {
     padding: 10px;
     margin: 10px;

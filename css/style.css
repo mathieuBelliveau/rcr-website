@@ -62,12 +62,6 @@ div.main_header > div.logo {
     margin: 8px;
 }
 
-div.logo > img {
-    height: 100%;
-    width: 100%;
-        
-}
-
 div.main_body {
     width: 900px;
 }
@@ -85,7 +79,7 @@ div.main_footer {
 div.home_switcher {
     padding: 10px;
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 220px 220px 220px 220px;
 }
 div.home_switcher > div {
     margin: 0 auto;
@@ -93,8 +87,7 @@ div.home_switcher > div {
     text-align: center;
 }
 div.home_switcher > div > div {
-    border-radius: 15px;
-    width: 300px;
+    width: 200px;
     height: 200px;
     background-size: cover;
     border: 1px black solid;
@@ -266,17 +259,17 @@ div.news > div.headlines > div > a {
       
 }
 
-.thumb {
+img.thumb {
     height:100%;
     width: 100%; 
 }
-.youtube {
+div.youtube {
     background-color: pink;
     height:100%;
     width:100%;
     position: relative;
 }
-.youtube > iframe {
+div.youtube > iframe {
     height:100%;
     width: 100%;
 }
