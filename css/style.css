@@ -88,7 +88,7 @@ div.home_switcher > div {
 }
 div.home_switcher > div > div {
     width: 200px;
-    height: 200px;
+    height: 325px;
     background-size: cover;
     border: 1px black solid;
 }
