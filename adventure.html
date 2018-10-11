@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 
     <head>
@@ -12,13 +13,55 @@
         
         <script type="text/javascript">
         </script>
+        
+        <script type="text/javascript">
+            $(document).ready(function() {
+				// theme buttons
+                $('button[data-theme]').click(function() {
+                    $('head link#theme').attr('href', $(this).data("theme"));
+                })
+				// news buttons
+				$('.news_browser .menu > a').each(function() {
+					$(this).click(function() {
+						$('.news_browser .menu > a, .news_browser .content > div').removeClass('active');
+						var that = $(this);
+						that.addClass('active');
+						$(that.data('id')).addClass('active');
+					})
+				})
+				// image swap
+				$('*[data-alt-bg]').click(function() {
+					var that = $(this);
+					var old = that.css('background-image');
+					that.css('background-image', that.data('alt-bg'));
+					that.data('alt-bg', old);
+				})
+                //season cycle
+                $('.logo').click(function() {
+                    var that = $('.logo > div');
+                    var s = that.data('count');//how to get data attr as integer?
+                    cycleSeason(that, s);
+                    
+                    function cycleSeason(t, s){
+                    var seasons = ["summer", "autumn", "winter", "spring"];
+                    s = (s+1)%4;
+                    t.data('count', s);
+                    that.css('background-image', 'url(raw/RCRLogo_'+seasons[s]+'.png)');
+                        
+                    $('head link#theme').attr('href', 'css/' + seasons[s] + '.css');
+                    }
+
+                })
+            });
+        </script>
     </head>
 
     <body>
         <div class="main_content">
             <div class="main_header">
                 <div class="logo">
-                    <img src="raw/RCRLogo-03.png">
+                    <div data-count="0" style="background:url(raw/RCRLogo_Summer.png);background-size: cover;width:100%;height:100%;">
+                    </div>
                 </div>
                 <div class="title">
                     R<span class="collapse">eal&nbsp;</span>C<span class="collapse">anadian&nbsp;</span>R<span class="collapse">ecreation</span>
@@ -26,7 +69,7 @@
             </div>
             <div class="main_body">
 				<div>
-					<div style="background-color: green;height: 500px;padding:15px">
+					<div style="height: 500px;padding:15px">
                         <div class='youtube' data-href='y6120QOlsfU'>
                         </div>
                     </div>
@@ -37,7 +80,7 @@
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 					</div>
 					<div>
-						<div style="background: green; height: 300px;">
+						<div style="height: 300px;">
                             <img src="https://media.tenor.com/images/d662bdae4b0c3593a09082f197c98155/tenor.gif" style="height:100%;display:block;margin:auto">
                         </div>
 					</div>
@@ -46,7 +89,7 @@
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 					</div>
 					<div>
-						<div style="background: green; height: 300px;display:grid">
+						<div style="height: 300px;display:grid">
                             <img src="https://media.giphy.com/media/gK9GvtGep7XHi/giphy.gif" style="margin:auto;width:100%">
                         </div>
 					</div>
@@ -55,10 +98,13 @@
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 					</div>
 					<div>
-						<div style="background: green; height: 300px;">
+						<div style="height: 300px;">
                         <img src="https://media.giphy.com/media/HYT1M1YCPI9KE/giphy.gif" style="display:block;margin:auto;height:100%"></div>
 					</div>
 				</div>
+                    <div style="background-color: pink;width:300px;height:100px;margin:auto;margin-bottom: 50px">
+                        Want to chat? <br> Contact us!
+                    </div>
             </div>
 <!--
             <div class="main_footer">
@@ -66,12 +112,6 @@
                 <div style="text-align: right; background: orange;">and right aligned, respectively</div>
             </div>
 -->
-            <div style="width: 100%; height: 100px;display:  grid; grid-template-columns: 25% 25% 25% 25%;">
-                <button id="winter" class="button" data-theme="css/winter.css">Winter</button>
-                <button id="spring" class="button" data-theme="css/spring.css">Spring</button>
-                <button id="summer" class="button" data-theme="css/summer.css">Summer</button>
-                <button id="autumn" class="button" data-theme="css/autumn.css">Autumn</button>
-            </div>
         </div>
         <script>
             $('div.main_header div.title').click(function() { $('div.main_header div.title span.collapse').toggleClass('hide') })

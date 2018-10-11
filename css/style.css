@@ -8,11 +8,11 @@ body {
     background-repeat: no-repeat;
 }
 a, a:visited {
-    color: #0C0;
+    color: black;
     text-decoration: none;
 }
 a:hover {
-    color: #0F0;
+    color: forestgreen;
     text-shadow:
         0 0 5px black,
         0 0 10px black;
