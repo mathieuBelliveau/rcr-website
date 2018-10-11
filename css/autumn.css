@@ -32,5 +32,11 @@ div.news > div.headlines > div > a {
 
 .menu > a.active {
     background-color: rgba(244,222,160,0.5);
-    //background-color: fff2c4;
+}
+
+a, a:visited {
+    color: rgb(101,38,21,0.9);
+}
+a:hover {
+    color: rgb(101,38,21,1);
 }
