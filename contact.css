@@ -1,0 +1,24 @@
+div.contact_grid {
+    display: grid;
+    grid-template-columns: 50% 20% 30%;
+    padding: 5px;
+}
+div.contact_grid label {
+    display: block;
+    padding: 5px 0;
+}
+div.contact_grid label *:first-child {
+    display: block;
+    margin-left: 15px;
+}
+div.contact_grid label input {
+    border: 4px solid #652615;
+    width: 100%;
+    background: rgba(253, 228, 159, 0.5);
+}
+div.contact_grid label textarea {
+    border: 4px solid #652615;
+    width: 100%;
+    height: 400px;
+    background: rgba(253, 228, 159, 0.5);
+}
