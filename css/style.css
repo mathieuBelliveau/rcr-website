@@ -35,6 +35,7 @@ h2 {
 div.main_content {
     width: 900px;
     margin: 0 auto;
+    padding-bottom: 5px;
 }
 div.main_header {
     width: 100%;
@@ -51,7 +52,7 @@ div.main_header div.title {
     text-align: left;
     font-weight: 900;
     vertical-align: middle;
-    letter-spacing: -3px;
+/*    letter-spacing: -3px;*/
     text-transform: uppercase;
 }
 div.main_header > div.logo {
@@ -63,6 +64,7 @@ div.main_header > div.logo {
 
 div.main_body {
     width: 900px;
+    padding: 0 0 5px 0;
 }
 div.main_body > div {
     margin: 15px 0;
@@ -207,8 +209,7 @@ div.news > div.headlines > div > a {
     font-family: "Merriweather";
     text-decoration: none;
     font-size: 25;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin: 17px 0;
 }
 .news_browser .menu > a:before {
     color: transparent;
@@ -216,7 +217,6 @@ div.news > div.headlines > div > a {
     text-shadow: none;
 }
 .news_browser .menu > a:hover {
-    padding: 5px 10px;
     text-shadow: 0 0 1px black;
 }
 
@@ -289,3 +289,12 @@ div.youtube > iframe {
 }
 
 
+
+div.contact_button {
+    background-color: brown;
+    width:300px;
+    height:100px;
+    margin: 5px auto;
+    text-align: center;
+    font-size:
+}
