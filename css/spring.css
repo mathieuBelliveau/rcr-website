@@ -26,3 +26,12 @@ div.news > div.headlines > div {
 div.news > div.headlines > div > a {
     color: #e2f1eb;
 }
+
+.content > div.active{
+    background-color: rgba(226,241,235,0.5);
+}
+
+.menu > a.active {
+    background-color: rgba(226,241,235,0.5);
+    //background-color: fff2c4;
+}
