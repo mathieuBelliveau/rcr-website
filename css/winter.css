@@ -41,3 +41,16 @@ a, a:visited {
 a:hover {
     color: rgb(27,57,24,1);
 }
+
+div.contact_button {
+    border-color:rgb(26,48,51,1);
+    background-color: rgb(27,57,24,1);
+}
+
+div.contact_button > a {
+    color: rgb(206,255,249,1);
+}
+
+.home_switcher > div > div > span {
+    color: rgb(206,255,249,1);
+}
